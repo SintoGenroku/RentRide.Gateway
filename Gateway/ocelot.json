@@ -1,0 +1,55 @@
+﻿{
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/authentication-api/registration",
+      "UpstreamHttpMethod": ["POST"],
+      "DownstreamPathTemplate": "/authentication/registration",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/authentication-api/token",
+      "UpstreamHttpMethod": ["POST"],
+      "DownstreamPathTemplate": "/connect/token",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/authentication-api/users",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamPathTemplate": "/authentication/users",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/authentication-api/users/{id}",
+      "UpstreamHttpMethod": ["GET", "PATCH", "DELETE"],
+      "DownstreamPathTemplate": "/authentication/users",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "auth-api",
+          "Port": 80
+        }
+      ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:800"
+  }
+}

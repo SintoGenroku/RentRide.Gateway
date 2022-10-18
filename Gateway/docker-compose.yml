@@ -1,0 +1,22 @@
+gateway:
+  build: .
+  ports: 
+   - "2080:80"
+  
+auth-api:
+  build: ./../RentRide.AuthenticationApi/
+  ports: 
+    - "6565:80"
+  depends_on:
+    - "auth-api-db"
+  environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+    - ConnectionString=Server=authentication-api-db;Database=UsersDb;User=SA;Password=Authentication_Api2022
+
+auth-api-db:
+  image: mcr.microsoft.com/mssql/server:2019-latest 
+  ports:
+    - "3210:1234"
+  environment:
+    - ACCEPT_EULA=Y
+    - MSSQL_SA_PASSWORD=Authentication_Api2022

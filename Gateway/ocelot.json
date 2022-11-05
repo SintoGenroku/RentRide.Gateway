@@ -2,54 +2,65 @@
   "Routes": [
     {
       "UpstreamPathTemplate": "/authentication-api/registration",
-      "UpstreamHttpMethod": ["POST"],
+      "UpstreamHttpMethod": [ "POST" ],
       "DownstreamPathTemplate": "/authentication/registration",
       "DownstreamScheme": "Http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "auth-api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 5035
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/authentication-api/token",
-      "UpstreamHttpMethod": ["POST"],
-      "DownstreamPathTemplate": "/connect/token",
+      "UpstreamPathTemplate": "/authentication-api/login",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/authentication/login",
       "DownstreamScheme": "Http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "auth-api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 5035
+        }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/authentication-api/logout",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/authentication/logout",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5035
+        }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/users-api/users",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/users",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5192
         }
       ]
     },
     {
-      "UpstreamPathTemplate": "/authentication-api/users",
-      "UpstreamHttpMethod": ["GET"],
-      "DownstreamPathTemplate": "/authentication/users",
+      "UpstreamPathTemplate": "/users-api/users/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DownstreamPathTemplate": "/api/users/{id}",
       "DownstreamScheme": "Http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "auth-api",
-          "Port": 80
-        }
-      ]
-    },
-    {
-      "UpstreamPathTemplate": "/authentication-api/users/{id}",
-      "UpstreamHttpMethod": ["GET", "PATCH", "DELETE"],
-      "DownstreamPathTemplate": "/authentication/users",
-      "DownstreamScheme": "Http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "auth-api",
-          "Port": 80
+          "Host": "localhost",
+          "Port": 5192
         }
       ]
     }
-  ],
-  "GlobalConfiguration": {
-    "BaseUrl": "http://localhost:800"
-  }
+  ]
 }

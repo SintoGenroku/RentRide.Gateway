@@ -121,6 +121,78 @@
           "Port": 7210
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/leasing-api/contracts",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/contracts",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6090
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/leasing-api/contracts/{id}",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/contracts/{id}",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6090
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/leasing-api/client/{clientId}/contracts",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/contracts/client/{clientId}/contracts",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6090
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/leasing-api/car/{carNumber}/contracts",
+      "UpstreamHttpMethod": [ "GET" ],
+      "DownstreamPathTemplate": "/api/contracts/car/{carNumber}/contracts",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6090
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/leasing-api/start-trip",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/contracts",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6090
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/leasing-api/end-trip",
+      "UpstreamHttpMethod": [ "PATCH" ],
+      "DownstreamPathTemplate": "/api/contracts",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 6090
+        }
+      ]
     }
   ]
 }

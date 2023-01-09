@@ -61,6 +61,66 @@
           "Port": 5192
         }
       ]
+    },
+    {
+      "UpstreamPathTemplate": "/cars-api/cars/{pageNumber}",
+      "UpstreamHttpMethod": [ "GET"],
+      "DownstreamPathTemplate": "/api/cars/page/{pageNumber}",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7210
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/cars-api/cars/available/{pageNumber}",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamPathTemplate": "/api/cars/available/page/{pageNumber}",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7210
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/cars-api/cars/nearest/{pageNumber}",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamPathTemplate": "/api/cars/nearest/page/{pageNumber}",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7210
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/cars-api/cars/{id}",
+      "UpstreamHttpMethod": [ "GET", "PATCH", "DELETE" ],
+      "DownstreamPathTemplate": "/api/cars/{id}",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7210
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/cars-api/cars",
+      "UpstreamHttpMethod": [ "POST" ],
+      "DownstreamPathTemplate": "/api/cars",
+      "DownstreamScheme": "Http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7210
+        }
+      ]
     }
   ]
 }
